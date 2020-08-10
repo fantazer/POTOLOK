@@ -1,0 +1,49 @@
+mixin header()
+	//block header
+	.head
+		.head-top-wrap
+			.main-cont
+				.header-contact-wrap
+					.header-contact
+						.header-contact__icon
+							+icon("phone","icon")
+						.header-contact__text Заказать обратный звонок
+					.header-contact
+						.header-contact__icon
+							+icon("mail","icon")
+						.header-contact__text Оставить сообщение
+
+
+		.main-cont
+			.header
+				a(href="/").header-logo
+					img(src="img/logo.svg", alt="")
+				.header-location
+					+icon("location","icon")
+					span Новосибирск
+				form(action="#").search
+					input(type="text" placeholder="Я ищу").input
+					.search-get
+						+icon("search","icon")
+				a(href="tel:8(495) 789-89-90").header-phone 8(495)789-89-90
+				.cart
+					.cart__icon
+						+icon("cart","icon")
+						span.cart-val 4
+
+		.nav
+			.main-cont
+				.nav-wrap
+					.nav-cat
+						.nav-cat__icon
+							+icon("menu","icon")
+						.nav-cat__text Каталог товаров
+					.menu
+						-
+							var items = [
+								'О компании', 'Услуги', 'Оплата и доставка', 'Калькулятор', 'Акции', 'Новости', 'Контакты'
+							];
+						each item in items
+							a(href="#").menu__el #{item}
+
+	//block header end
